@@ -2,12 +2,12 @@ target:
   image: philm/ansible_target:latest
   container_name: ansible_target
   expose:
-    - "22"
+    - "2322"
   volumes:
     - ~/.ssh/id_rsa.pub:/home/ubuntu/.ssh/authorized_keys
   privileged: true
 
-test:
+ansible-master:
   image: philm/ansible_playbook
   links:
     - target
